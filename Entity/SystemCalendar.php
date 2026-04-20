@@ -69,9 +69,6 @@ class SystemCalendar implements ExtendEntityInterface
     #[ConfigField(defaultValues: ['entity' => ['label' => 'oro.ui.updated_at']])]
     protected ?\DateTimeInterface $updatedAt = null;
 
-    /**
-     * Constructor
-     */
     public function __construct()
     {
         $this->events = new ArrayCollection();
@@ -277,9 +274,6 @@ class SystemCalendar implements ExtendEntityInterface
         return $this;
     }
 
-    /**
-     * Pre persist event handler
-     */
     #[ORM\PrePersist]
     public function prePersist()
     {
@@ -287,9 +281,6 @@ class SystemCalendar implements ExtendEntityInterface
         $this->updatedAt = clone $this->createdAt;
     }
 
-    /**
-     * Pre update event handler
-     */
     #[ORM\PreUpdate]
     public function preUpdate()
     {

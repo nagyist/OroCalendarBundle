@@ -216,9 +216,6 @@ class Attendee implements EmailHolderInterface, ExtendEntityInterface
         return $this;
     }
 
-    /**
-     * Pre persist event listener
-     */
     #[ORM\PrePersist]
     public function beforeSave()
     {
@@ -226,9 +223,6 @@ class Attendee implements EmailHolderInterface, ExtendEntityInterface
         $this->updatedAt = clone $this->createdAt;
     }
 
-    /**
-     * Invoked before the entity is updated.
-     */
     #[ORM\PreUpdate]
     public function preUpdate()
     {

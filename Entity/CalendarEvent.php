@@ -231,9 +231,6 @@ class CalendarEvent implements
     #[ORM\JoinColumn(name: 'organizer_user_id', referencedColumnName: 'id', nullable: true, onDelete: 'SET NULL')]
     protected ?User $organizerUser = null;
 
-    /**
-     * CalendarEvent constructor.
-     */
     public function __construct()
     {
         $this->reminders   = new ArrayCollection();

@@ -64,9 +64,6 @@ class Calendar implements ExtendEntityInterface
     #[ORM\JoinColumn(name: 'organization_id', referencedColumnName: 'id', onDelete: 'SET NULL')]
     protected ?OrganizationInterface $organization = null;
 
-    /**
-     * Constructor
-     */
     public function __construct()
     {
         $this->events = new ArrayCollection();
